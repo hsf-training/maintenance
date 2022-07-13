@@ -1,0 +1,48 @@
+From 0c3e6b395a7d28a95a3b0651bf106e30c46ed73b Mon Sep 17 00:00:00 2001
+From: Kilian Lieret <kilian.lieret@posteo.de>
+Date: Wed, 13 Jul 2022 14:45:28 -0400
+Subject: [PATCH] Switch to using the Jekyll theme
+
+---
+ Gemfile     | 8 ++++++--
+ _config.yml | 2 ++
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/Gemfile b/Gemfile
+index a544014..7609dd0 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -2,13 +2,17 @@
+ 
+ source 'https://rubygems.org'
+ 
+-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
++git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+ 
+ # Synchronize with https://pages.github.com/versions
+ ruby '>=2.5.5'
+ 
+ gem 'github-pages', group: :jekyll_plugins
+ 
++gem 'rake'
++gem 'hsf-training-theme', git: "https://github.com/hsf-training/hsf-training-theme.git", branch: 'main'
++
+ if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('3.0.0')
+     gem 'webrick', '>= 1.6.1'
+-end
+\ No newline at end of file
++end
++
+diff --git a/_config.yml b/_config.yml
+index 373aa99..d64ced3 100644
+--- a/_config.yml
++++ b/_config.yml
+@@ -103,3 +103,5 @@ highlighter: rouge
+ 
+ # show authors managed by allcontributors bot
+ show_authors: true
++
++remote_theme: hsf-training/hsf-training-theme
+-- 
+2.32.1 (Apple Git-133)
+
