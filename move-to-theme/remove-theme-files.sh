@@ -8,6 +8,7 @@ rm -r _layouts
 rm -r assets
 rm -r bin
 rm -rf _episodes_rmd
+rm -f .travis.yml
 
 # Remove folders that only contain ".gitkeep"
 if [[ $(ls data|wc -l|xargs) == "0" ]]; then rm -r data; fi
