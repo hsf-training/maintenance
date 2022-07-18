@@ -15,3 +15,14 @@ pre-commit install
 ```
 
 before committing.
+
+## Dispatching commands
+
+* Install and set up [multi-gitter](https://github.com/lindell/multi-gitter/tree/master/internal).
+  Note: If you run into any errors, you might need to start from a blank git config.
+
+## Merging lots of PR
+
+* You might want to use the `Refined github` browser extension to automatically
+  delete branches after mergning if creating PRs in bulk with `multi-gitter`
+  or friends
