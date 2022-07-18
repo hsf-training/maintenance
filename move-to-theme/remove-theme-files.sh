@@ -14,3 +14,6 @@ rm -f .travis.yml
 if [[ $(ls data|wc -l|xargs) == "0" ]]; then rm -r data; fi
 if [[ $(ls code|wc -l|xargs) == "0" ]]; then rm -r code; fi
 if [[ $(ls files|wc -l|xargs) == "0" ]]; then rm -r files; fi
+
+# These are now shared organization wide
+rm -f .github/{FUNDING.yml,ISSUE_TEMPLATE.md,PULL_REQUEST_TEMPLATE.md}
