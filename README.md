@@ -1,6 +1,6 @@
 # Maintenance snippets
 
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/hsf-training/maintenance-scripts/master.svg)](https://results.pre-commit.ci/latest/github/hsf-trianing/maintenance-scripts/master)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/hsf-training/maintenance-snippets/main.svg)](https://results.pre-commit.ci/latest/github/hsf-training/maintenance-snippets/main)
 
 > **Warning**
 > Some of the scripts and snippets will be experimental. Be careful what you
