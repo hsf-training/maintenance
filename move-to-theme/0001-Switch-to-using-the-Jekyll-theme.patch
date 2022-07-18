@@ -13,17 +13,17 @@ index a544014..7609dd0 100644
 --- a/Gemfile
 +++ b/Gemfile
 @@ -2,13 +2,17 @@
- 
+
  source 'https://rubygems.org'
- 
+
 -git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 +git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
- 
+
  # Synchronize with https://pages.github.com/versions
  ruby '>=2.5.5'
- 
+
  gem 'github-pages', group: :jekyll_plugins
- 
+
 +gem 'rake'
 +gem 'hsf-training-theme', git: "https://github.com/hsf-training/hsf-training-theme.git", branch: 'main'
 +
@@ -38,11 +38,10 @@ index 373aa99..d64ced3 100644
 --- a/_config.yml
 +++ b/_config.yml
 @@ -103,3 +103,5 @@ highlighter: rouge
- 
+
  # show authors managed by allcontributors bot
  show_authors: true
 +
 +remote_theme: hsf-training/hsf-training-theme
--- 
+--
 2.32.1 (Apple Git-133)
-
