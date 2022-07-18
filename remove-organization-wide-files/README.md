@@ -5,7 +5,7 @@ Therefore they should not exist/be overwritten in the individual repositories.
 
 ## Multi-gitter run
 
-> **Caution**
+> **Warning**
 > Careful!
 
 ```bash
