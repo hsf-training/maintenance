@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""Get txt file of all repositories that contain a carpentry-style Jekyll
+lesson
+"""
+
 import pandas as pd
 
 
