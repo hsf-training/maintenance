@@ -1,6 +1,10 @@
-# This file was automatically added. If you are making a change that should become the default, please
-# make your changes in maintenance-snippets/add-common files and propagate from there.default_language_version:
-# Ask @klieret if you're unsure what this means.
+# === IMPORTANT: CENTRALLY MAINTAINED FILE ===
+# This file was automatically added via the scripts at maintenance-snippets.
+# Please do not change it. Rather, update the blueprint in maintenance-snippets/add-common-files and propagate
+# the changes from there.
+# IF YOU REALLY WANT TO MAKE REPOSITORY SPECIFIC CHANGES TO THIS FILE, PLEASE REMOVE THIS NOTICE!
+# Tag @klieret for any questions.
+# ======
 
 ci:
     autoupdate_schedule: monthly
