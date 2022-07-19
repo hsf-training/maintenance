@@ -47,6 +47,7 @@ def add_file(sf: SharedFile) -> None:
                 f"{target} already exists. Manual action needed."
             )
     assert source.is_file()
+    target.parent.mkdir(exist_ok=True, parents=True)
     shutil.copy(source, target)
 
 
