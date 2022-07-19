@@ -21,7 +21,7 @@ before committing.
 ## Dispatching commands
 
 > **Warning**
-> Please be really careful when dispatching commands to all repositories. Please always run with `--dry-run`
+> Please be really careful when dispatching commands to all repositories. Please always run `multi-gitter` with `--dry-run`
 > first.
 
 Install and set up [multi-gitter](https://github.com/lindell/multi-gitter/tree/master/internal).
