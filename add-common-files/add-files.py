@@ -1,5 +1,7 @@
 #!/usr/bin/env xonsh
 
+from dataclasses import dataclass
+from enum import Enum, auto
 from pathlib import Path
 import os
 import shutil
@@ -7,20 +9,41 @@ import shutil
 this_dir = Path(__file__).resolve().parent
 cwd = Path(os.getcwd()).resolve()
 
+
+class ExistAction(Enum):
+    OVERWRITE = auto()
+    EXCEPTION = auto()
+    SKIP = auto()
+
+
+@dataclass
+class SharedFile:
+    path: Path
+    exist_action: ExistAction = ExistAction.EXCEPTION
+
+
 files_to_add = [
-    ".github/config.yml",
-    ".github/stale.yml",
+    SharedFile(Path(".github/config.yml")),
+    SharedFile(Path(".github/stale.yml")),
 ]
 
 
-def add_file(filename: str) -> None:
-    target = cwd / filename
-    source = this_dir / filename
+def add_file(sf: SharedFile) -> None:
+    target = cwd / sf.path
+    source = this_dir / sf.path
     if target.is_file():
-        if target.read_text() == source.read_text():
+        if sf.exist_action == ExistAction.OVERWRITE:
+            pass
+        if sf.exist_action == ExistAction.SKIP:
+            print(f"Skipping {sf.path}")
+            return
+        elif target.read_text() == source.read_text():
             print(f"{filename} already exists and is up to date")
             return
-        raise FileExistsError(f"{target} already exists. Manual action needed.")
+        else:
+            raise FileExistsError(
+                f"{target} already exists. Manual action needed."
+            )
     assert source.is_file()
     shutil.copy(source, target)
 
