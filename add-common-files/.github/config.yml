@@ -1,3 +1,7 @@
+# This file was automatically added. If you are making a change that should become the default, please
+# make your changes in maintenance-snippets/add-common files and propagate from there.default_language_version:
+# Ask @klieret if you're unsure what this means.
+
 # Configuration for welcome - https://github.com/behaviorbot/welcome
 
 # Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
