@@ -21,13 +21,17 @@ before committing.
 ## Dispatching commands
 
 > **Warning**
-> Please be really careful when dispatching commands to all repositories. Please always run `multi-gitter` with `--dry-run`
-> first.
+> * Please be really careful when dispatching commands to all repositories.
+> * Please always test scripts on `hsf-training/repository-maintenance-test` first
+> * Please always run `multi-gitter` with `--dry-run` first.
 
 Install and set up [multi-gitter](https://github.com/lindell/multi-gitter/tree/master/internal).
-Note: If you run into any errors like [this one](https://github.com/gruntwork-io/git-xargs/issues/82), you might need
-to use a simplified git config. You can use `helpers/switch_out_gitconfig.py` to toggle between your usual config
-and the simplified one.
+You will find instructions for how to run it in their readme.
+
+> **Note**
+> If you run into any errors like [this one](https://github.com/gruntwork-io/git-xargs/issues/82), you might need
+> to use a simplified git config. You can use `helpers/switch_out_gitconfig.py` to toggle between your usual config
+> and the simplified one.
 
 ## Helpful notes
 
