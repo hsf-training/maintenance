@@ -23,8 +23,8 @@ class SharedFile:
 
 
 files_to_add = [
-    SharedFile(Path(".github/config.yml")),
-    SharedFile(Path(".github/stale.yml")),
+    SharedFile(Path(".github/config.yml"), exist_action=ExistAction.OVERWRITE),
+    SharedFile(Path(".github/stale.yml"), exist_action=ExistAction.OVERWRITE),
     SharedFile(Path("codespell.txt"), exist_action=ExistAction.SKIP),
     SharedFile(Path(".pre-commit-config.yaml"), exist_action=ExistAction.SKIP),
 ]
@@ -36,7 +36,7 @@ def add_file(sf: SharedFile) -> None:
     if target.is_file():
         if sf.exist_action == ExistAction.OVERWRITE:
             pass
-        if sf.exist_action == ExistAction.SKIP:
+        elif sf.exist_action == ExistAction.SKIP:
             print(f"Skipping {sf.path}")
             return
         elif target.read_text() == source.read_text():
