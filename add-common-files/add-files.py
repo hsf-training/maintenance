@@ -23,8 +23,8 @@ class SharedFile:
 
 
 files_to_add = [
-    SharedFile(Path(".github/config.yml"), exist_action=ExistAction.OVERWRITE),
-    SharedFile(Path(".github/stale.yml"), exist_action=ExistAction.OVERWRITE),
+    SharedFile(Path(".github/config.yml"), exist_action=ExistAction.EXCEPTION),
+    SharedFile(Path(".github/stale.yml"), exist_action=ExistAction.EXCEPTION),
     SharedFile(Path("codespell.txt"), exist_action=ExistAction.SKIP),
     SharedFile(Path(".pre-commit-config.yaml"), exist_action=ExistAction.SKIP),
 ]
