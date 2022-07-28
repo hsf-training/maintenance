@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+
+"""Multi-gitter will show partial urls of the form "org/repo #pr_number".
+You will not get git notifications of the PRs because you opened them yourself.
+This script will take the output of multi-gitter and open all of the PRs in the browser for you.
+"""
+
+
 import webbrowser
 
 
