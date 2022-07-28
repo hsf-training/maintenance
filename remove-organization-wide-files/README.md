@@ -8,6 +8,10 @@ Therefore they should not exist/be overwritten in the individual repositories.
 > **Warning**
 > Careful!
 
+> **Note**
+> Because of a [bug](https://github.com/lindell/multi-gitter/issues/266) in
+> multi-gitter, use `--git-type=cmd`.
+
 ```bash
-multi-gitter run ./remove-organization-wide-files.sh -O hsf-training -m "Remove organization wide shared files" -B remove-organization-wide-files
+multi-gitter run ./remove-organization-wide-files.sh -O hsf-training -m "Remove organization wide shared files" -B remove-organization-wide-files --git-type=cmd
 ```
