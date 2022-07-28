@@ -13,5 +13,5 @@ Therefore they should not exist/be overwritten in the individual repositories.
 > multi-gitter, use `--git-type=cmd`.
 
 ```bash
-multi-gitter run ./remove-organization-wide-files.sh -O hsf-training -m "Remove organization wide shared files" -B remove-organization-wide-files --git-type=cmd
+multi-gitter run ./remove-organization-wide-files.py -O hsf-training -m "Remove organization wide shared files" -B remove-organization-wide-files --git-type=cmd
 ```
