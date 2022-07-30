@@ -19,6 +19,7 @@ class ExistAction(Enum):
 @dataclass
 class SharedFile:
     path: Path
+    #: Action to take if the file already exists but is different
     exist_action: ExistAction = ExistAction.EXCEPTION
 
 
