@@ -12,6 +12,8 @@ cwd = Path(os.getcwd()).resolve()
 
 class ExistAction(Enum):
     OVERWRITE = auto()
+    # If a common header is there, it will be overwritten
+    OVERWRITE_IF_HEADER = auto()
     EXCEPTION = auto()
     SKIP = auto()
 
@@ -24,11 +26,25 @@ class SharedFile:
 
 
 files_to_add = [
-    SharedFile(Path(".github/config.yml"), exist_action=ExistAction.EXCEPTION),
-    SharedFile(Path(".github/stale.yml"), exist_action=ExistAction.EXCEPTION),
+    SharedFile(
+        Path(".github/config.yml"), exist_action=ExistAction.OVERWRITE_IF_HEADER
+    ),
+    SharedFile(
+        Path(".github/stale.yml"), exist_action=ExistAction.OVERWRITE_IF_HEADER
+    ),
     SharedFile(Path("codespell.txt"), exist_action=ExistAction.SKIP),
-    SharedFile(Path(".pre-commit-config.yaml"), exist_action=ExistAction.SKIP),
+    SharedFile(
+        Path(".pre-commit-config.yaml"),
+        exist_action=ExistAction.OVERWRITE_IF_HEADER,
+    ),
 ]
+
+
+def has_common_header(txt: str) -> bool:
+    lines = txt.splitlines()
+    if not lines:
+        return False
+    return "CENTRALLY MAINTAINED FILE" in lines[0]
 
 
 def add_file(sf: SharedFile) -> None:
@@ -36,6 +52,11 @@ def add_file(sf: SharedFile) -> None:
     source = this_dir / sf.path
     if target.is_file():
         if sf.exist_action == ExistAction.OVERWRITE:
+            pass
+        elif (
+            sf.exist_action == ExistAction.OVERWRITE_IF_HEADER
+            and has_common_header(target.read_text())
+        ):
             pass
         elif sf.exist_action == ExistAction.SKIP:
             print(f"Skipping {sf.path}")
