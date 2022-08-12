@@ -16,3 +16,17 @@ Useful to execute bulk commands.
  ```
 
  this will skip already existing repos.
+
+ To pull all of them at once or do other simple broadcasting, you can use `gita`:
+
+ ```bash
+ gita add --recursive --auto-group <folder containing all repos from above>
+ ```
+
+ Now you can for example do
+
+ ```bash
+ gita super fetch <group name>
+ ```
+
+ to fetch from all repos at once.
