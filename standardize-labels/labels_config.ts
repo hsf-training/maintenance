@@ -1,3 +1,4 @@
+[
     {
           name: 'episode 1',
           color: '92D48E',
@@ -76,7 +77,7 @@
     {
           name: 'type:bug',
           color: 'DB1F2E',
-          description: 'Something isn't working',
+          description: 'Something isn\'t working',
     },
     {
           name: 'type:duplicate',
@@ -101,10 +102,11 @@
     {
           name: 'type:invalid',
           color: 'EDDF1A',
-          description: 'This doesn't seem right',
+          description: 'This doesn\'t seem right',
     },
     {
           name: 'wontfix',
           color: 'FCFAFC',
           description: 'This will not be worked on',
     }
+]
