@@ -7,4 +7,4 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 cp "${SCRIPT_DIR}/Gemfile" .
 
-echo "\n\nremote_theme: hsf-training/hsf-training-theme" >> _config.yml
+echo -e "\n\nremote_theme: hsf-training/hsf-training-theme" >> _config.yml
