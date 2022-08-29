@@ -5,4 +5,6 @@ IFS=$'\n\t'
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-git apply "${SCRIPT_DIR}/0001-Switch-to-using-the-Jekyll-theme.patch"
+cp "${SCRIPT_DIR}/Gemfile" .
+
+echo "\n\nremote_theme: hsf-training/hsf-training-theme" >> _config.yml
