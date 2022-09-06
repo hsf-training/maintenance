@@ -110,7 +110,9 @@ def add_file(sf: SharedFile) -> None:
             start_marker=SHARED_START_LINE_MARKER,
             end_marker=SHARED_STOP_LINE_MARKER,
         )
-        _target.write_text(f"{t_before}\n{s_middle}\n{t_after}")
+        _target.write_text(
+            "\n".join(filter(None, [t_before, s_middle, t_after]))
+        )
 
     if target.is_file():
         if sf.exist_action == ExistAction.OVERWRITE:
