@@ -85,6 +85,8 @@ def add_file(sf: SharedFile) -> None:
             raise FileExistsError(
                 f"{target} already exists. Manual action needed."
             )
+    elif sf.does_not_exist_action == DoesNotExistAction.CREATE:
+        return replace_file(source, target)
 
 
 if __name__ == "__main__":
