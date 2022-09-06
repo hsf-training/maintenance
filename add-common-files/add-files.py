@@ -61,14 +61,20 @@ def has_common_header(txt: str) -> bool:
 def add_file(sf: SharedFile) -> None:
     target = cwd / sf.path
     source = this_dir / sf.path
+    assert source.is_file()
+
+    def replace_file(_source: Path, _target: Path) -> None:
+        _target.parent.mkdir(exist_ok=True, parents=True)
+        shutil.copy(_source, _target)
+
     if target.is_file():
         if sf.exist_action == ExistAction.OVERWRITE:
-            pass
+            return replace_file(source, target)
         elif (
             sf.exist_action == ExistAction.OVERWRITE_IF_HEADER
             and has_common_header(target.read_text())
         ):
-            pass
+            return replace_file(source, target)
         elif sf.exist_action == ExistAction.SKIP:
             print(f"Skipping {sf.path}")
             return
@@ -79,9 +85,6 @@ def add_file(sf: SharedFile) -> None:
             raise FileExistsError(
                 f"{target} already exists. Manual action needed."
             )
-    assert source.is_file()
-    target.parent.mkdir(exist_ok=True, parents=True)
-    shutil.copy(source, target)
 
 
 if __name__ == "__main__":
