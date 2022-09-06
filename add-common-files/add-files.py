@@ -18,11 +18,17 @@ class ExistAction(Enum):
     SKIP = auto()
 
 
+class DoesNotExistAction(Enum):
+    SKIP = auto()
+    CREATE = auto()
+
+
 @dataclass
 class SharedFile:
     path: Path
     #: Action to take if the file already exists but is different
     exist_action: ExistAction = ExistAction.EXCEPTION
+    does_not_exist_action: DoesNotExistAction = DoesNotExistAction.CREATE
 
 
 files_to_add = [
@@ -36,6 +42,11 @@ files_to_add = [
     SharedFile(
         Path(".pre-commit-config.yaml"),
         exist_action=ExistAction.OVERWRITE_IF_HEADER,
+    ),
+    SharedFile(
+        Path("CONTRIBUTING.md"),
+        exist_action=ExistAction.OVERWRITE,
+        does_not_exist_action=DoesNotExistAction.SKIP,
     ),
 ]
 
