@@ -36,7 +36,7 @@
     },
     {
           name: 'good first issue',
-          color: '7D36D9',
+          color: 'FBCA04',
           description: 'Good for newcomers',
     },
     {
