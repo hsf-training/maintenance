@@ -22,7 +22,7 @@ agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md).
 The easiest way to get started is to file an issue
 to tell us about a mistake,
 some awkward wording,
-a factual error.
+or a factual error.
 This is a good way to introduce yourself
 and to meet some of our community members.
 
