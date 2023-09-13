@@ -3,7 +3,6 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/hsf-training/maintenance/main.svg)](https://results.pre-commit.ci/latest/github/hsf-training/maintenance/main)
 
 > **Warning**
