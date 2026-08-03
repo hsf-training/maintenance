@@ -5,7 +5,6 @@ You will not get git notifications of the PRs because you opened them yourself.
 This script will take the output of multi-gitter and open all of the PRs in the browser for you.
 """
 
-
 import webbrowser
 
 
