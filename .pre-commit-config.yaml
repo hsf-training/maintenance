@@ -1,4 +1,6 @@
 ci:
+  autoupdate_commit_msg: "chore(deps): update pre-commit hooks"
+  autofix_commit_msg: "style: pre-commit fixes"
   autoupdate_schedule: monthly
 
 repos:
@@ -22,7 +24,7 @@ repos:
         args: ["-I", "codespell.txt"]
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.5.1
+    rev: 26.10.0
     hooks:
       - id: black
         args: ["-l", "80"]
